@@ -14,6 +14,7 @@ import {
   Tooltip,
   Text,
   AspectRatio,
+  useColorModeValue,
   FormHelperText,
 } from "@chakra-ui/react";
 import { RepeatIcon } from "@chakra-ui/icons";
@@ -189,8 +190,9 @@ export const Main: React.FC = () => {
           ) : (
             <Box
               borderRadius="md"
-              border="1px"
-              borderColor="gray.200"
+              border="2px"
+              borderColor={useColorModeValue("gray.300", "gray.600")}
+              bg={useColorModeValue("gray.200", "gray.700")}
               mt={4}
               mb={12}
             >

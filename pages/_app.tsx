@@ -32,7 +32,8 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#603cba" />
-        <meta name="theme-color" content="#ffffff"></meta>
+        <meta name="theme-color" content="#ffffff"></meta>'
+        <script async src="https://cdn.splitbee.io/sb.js"></script>'
       </Head>
       <ChakraProvider theme={theme}>
         <Component {...pageProps} />

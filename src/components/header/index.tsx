@@ -19,7 +19,7 @@ export const Header: React.FC = () => {
     <>
       <Box
         borderBottom="1px"
-        borderColor={useColorModeValue("gray.100", "gray.900")}
+        borderColor={useColorModeValue("gray.100", "gray.600")}
         px={4}
         py={2}
       >

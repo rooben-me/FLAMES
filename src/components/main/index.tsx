@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import {
   Box,
   Heading,
@@ -15,7 +15,7 @@ import {
   Text,
   AspectRatio,
   useColorModeValue,
-  FormHelperText,
+  Skeleton,
 } from "@chakra-ui/react";
 import { RepeatIcon } from "@chakra-ui/icons";
 import { useToast } from "@chakra-ui/toast";
@@ -69,20 +69,12 @@ export const Main: React.FC = () => {
           break;
       }
     }
-
-    setYourName("");
-    setyourPartner("");
   };
-
-  useEffect(() => {
-    console.log(result);
-  });
 
   const handleReset = () => {
     if (yourName != "" || yourPartner != "") {
       setYourName("");
       setyourPartner("");
-      console.log(yourName);
       toast({
         title: "Your name's have been reset",
         position: "bottom-right",
@@ -176,7 +168,6 @@ export const Main: React.FC = () => {
             </HStack>
           </form>
         </Box>
-
         <Box mt={12}>
           <Heading as="h2" size="sm" fontFamily="monospace">
             Result
@@ -201,14 +192,12 @@ export const Main: React.FC = () => {
               mt={4}
               mb={12}
             >
-              <AspectRatio ratio={1}>
-                <Box
-                  src="https://hworymbo.sirv.com/Images/Group%2010.png"
-                  width="502"
-                  height="502"
-                  alt="white image"
-                />
-              </AspectRatio>
+              <Skeleton
+                borderRadius="2px"
+                fadeDuration={2}
+                speed={4}
+                height="502px"
+              />
             </Box>
           )}
         </Box>

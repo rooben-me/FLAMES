@@ -4,8 +4,10 @@ import { ChakraProvider } from "@chakra-ui/react";
 import theme from "@definitions/chakra/theme";
 import "@styles/global.css";
 import Head from "next/head";
+import splitbee from "@splitbee/web";
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
+  splitbee.init();
   return (
     <>
       <Head>
@@ -31,7 +33,6 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#603cba" />
         <meta name="theme-color" content="#ffffff"></meta>
-        <script async src="https://cdn.splitbee.io/sb.js"></script>
       </Head>
       <ChakraProvider theme={theme}>
         <Component {...pageProps} />

@@ -11,7 +11,40 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <>
       <Head>
-        <title>Flames - Love Checker</title>
+        <title>FLAMES Game - Love Calculator online</title>
+        <meta name="title" content="FLAMES Game - Love Calculator online" />
+        <meta
+          name="description"
+          content="FLAMES stands for - Friends, Lover, Affection, Marriage, Enemy, Sister. If you are in love with someone, and if you would like to test the love compatibility between him/her then take this Love Flames Game online test. Just enter your name and your partner names and then click on FLAMES. Take FLAMES test with love calculator online to know what kind of relationship you will fall with the other person"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://metatags.io/" />
+        <meta
+          property="og:title"
+          content="FLAMES Game - Love Calculator online"
+        />
+        <meta
+          property="og:description"
+          content="FLAMES stands for - Friends, Lover, Affection, Marriage, Enemy, Sister. If you are in love with someone, and if you would like to test the love compatibility between him/her then take this Love Flames Game online test. Just enter your name and your partner names and then click on FLAMES. Take FLAMES test with love calculator online to know what kind of relationship you will fall with the other person"
+        />
+        <meta
+          property="og:image"
+          content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png"
+        />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://metatags.io/" />
+        <meta
+          property="twitter:title"
+          content="FLAMES Game - Love Calculator online"
+        />
+        <meta
+          property="twitter:description"
+          content="FLAMES stands for - Friends, Lover, Affection, Marriage, Enemy, Sister. If you are in love with someone, and if you would like to test the love compatibility between him/her then take this Love Flames Game online test. Just enter your name and your partner names and then click on FLAMES. Take FLAMES test with love calculator online to know what kind of relationship you will fall with the other person"
+        />
+        <meta
+          property="twitter:image"
+          content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png"
+        />
         <link
           rel="apple-touch-icon"
           sizes="180x180"

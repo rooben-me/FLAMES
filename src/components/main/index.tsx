@@ -15,6 +15,7 @@ import {
   Text,
   AspectRatio,
   useColorModeValue,
+  useColorMode,
   Skeleton,
   Link,
 } from "@chakra-ui/react";
@@ -24,6 +25,7 @@ import splitbee from "@splitbee/web";
 
 export const Main: React.FC = () => {
   const toast = useToast();
+  const { colorMode } = useColorMode();
 
   splitbee.init();
   splitbee.track("Click CTA");
@@ -71,19 +73,19 @@ export const Main: React.FC = () => {
     }
   };
 
-  const handleReset = () => {
-    if (yourName != "" || yourPartner != "") {
-      setYourName("");
-      setyourPartner("");
-      toast({
-        title: "Your name's have been reset",
-        position: "bottom-right",
-        variant: "subtle",
-        status: "success",
-        isClosable: true,
-      });
-    }
-  };
+  // const handleReset = () => {
+  //   if (yourName != "" || yourPartner != "") {
+  //     setYourName("");
+  //     setyourPartner("");
+  //     toast({
+  //       title: "Your name's have been reset",
+  //       position: "bottom-right",
+  //       variant: "subtle",
+  //       status: "success",
+  //       isClosable: true,
+  //     });
+  //   }
+  // };
 
   return (
     <>
@@ -134,23 +136,24 @@ export const Main: React.FC = () => {
               </div>
             </VStack>
 
-            <HStack direction="row" spacing={4} mt={8}>
-              <Button
-                type="submit"
-                colorScheme="gray"
-                variant="solid"
-                w="100%"
-                size="lg"
-                data-splitbee-event="Click CTA"
-              >
-                <HStack>
-                  <Box w="24px">
-                    <Image src="/images/love_Icon.png" alt="rooben" />
-                  </Box>
-                  <Text>Check your Fate</Text>
-                </HStack>
-              </Button>
-              <Tooltip
+            {/* <HStack direction="row" spacing={4} mt={8}> */}
+            <Button
+              type="submit"
+              colorScheme="gray"
+              variant="solid"
+              w="100%"
+              size="lg"
+              mt={8}
+              data-splitbee-event="Click CTA"
+            >
+              <HStack>
+                <Box w="24px">
+                  <Image src="/images/love_Icon.png" alt="rooben" />
+                </Box>
+                <Text>Check your Fate</Text>
+              </HStack>
+            </Button>
+            {/* <Tooltip
                 label="Restart!"
                 placement="top"
                 aria-label="Restart tooltip"
@@ -164,8 +167,8 @@ export const Main: React.FC = () => {
                   }}
                   icon={<RepeatIcon />}
                 />
-              </Tooltip>
-            </HStack>
+              </Tooltip> */}
+            {/* </HStack> */}
           </form>
         </Box>
         <Box mt={12}>
@@ -203,7 +206,14 @@ export const Main: React.FC = () => {
         </Box>
         <Link href="https://rooben.webflow.io/" isExternal>
           <Box w="50%" mx="auto" mb={4} mt={12}>
-            <Image src="/images/Signature_Black.png" alt="Rooben's Signature" />
+            <Image
+              src={`${
+                colorMode === "light"
+                  ? "/images/Signature_Black.png"
+                  : "/images/Signature_White.png"
+              }`}
+              alt="Rooben's Signature"
+            />
           </Box>
         </Link>
       </Container>

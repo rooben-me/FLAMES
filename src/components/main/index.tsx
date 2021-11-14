@@ -16,6 +16,7 @@ import {
   AspectRatio,
   useColorModeValue,
   Skeleton,
+  Link,
 } from "@chakra-ui/react";
 import { RepeatIcon } from "@chakra-ui/icons";
 import { useToast } from "@chakra-ui/toast";
@@ -41,33 +42,32 @@ export const Main: React.FC = () => {
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    if (yourName != "" && yourPartner != "") {
-      var lengthInput = yourName.length + yourPartner.length;
-      while (flames.length != 1) {
-        flames = flames.splice(lengthInput % 6, 1);
-      }
-      switch (flames[0]) {
-        case "Friends":
-          setResult("Friends");
-          break;
-        case "Love":
-          setResult("Love");
-          break;
-        case "Affection":
-          setResult("Affection");
-          break;
-        case "Marriage":
-          setResult("Marriage");
-          break;
-        case "Enemy":
-          setResult("Enemy");
-          break;
-        case "Siblings":
-          setResult("Siblings");
-          break;
-        default:
-          break;
-      }
+
+    var lengthInput = yourName.length + yourPartner.length;
+    while (flames.length != 1) {
+      flames = flames.splice(lengthInput % 6, 1);
+    }
+    switch (flames[0]) {
+      case "Friends":
+        setResult("Friends");
+        break;
+      case "Love":
+        setResult("Love");
+        break;
+      case "Affection":
+        setResult("Affection");
+        break;
+      case "Marriage":
+        setResult("Marriage");
+        break;
+      case "Enemy":
+        setResult("Enemy");
+        break;
+      case "Siblings":
+        setResult("Siblings");
+        break;
+      default:
+        break;
     }
   };
 
@@ -91,7 +91,7 @@ export const Main: React.FC = () => {
         <Heading
           bgGradient="linear(to-l, #7928CA, #FF0080)"
           bgClip="text"
-          fontSize={["3xl", "4xl"]}
+          fontSize={["3xl", "5xl"]}
           marginTop={[8, 12]}
           fontWeight="extrabold"
           as="h1"
@@ -123,7 +123,7 @@ export const Main: React.FC = () => {
                   <Input
                     type="text"
                     focusBorderColor="purple.500"
-                    placeholder="Name like NE"
+                    placeholder="Name like Ne"
                     aria-describedby="My-Partner"
                     size="lg"
                     onChange={(event) =>
@@ -201,6 +201,11 @@ export const Main: React.FC = () => {
             </Box>
           )}
         </Box>
+        <Link href="https://rooben.webflow.io/" isExternal>
+          <Box w="50%" mx="auto" mb={4} mt={12}>
+            <Image src="/images/Signature_Black.png" alt="Rooben's Signature" />
+          </Box>
+        </Link>
       </Container>
     </>
   );

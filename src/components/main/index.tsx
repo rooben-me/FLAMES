@@ -19,9 +19,13 @@ import {
 } from "@chakra-ui/react";
 import { RepeatIcon } from "@chakra-ui/icons";
 import { useToast } from "@chakra-ui/toast";
+import splitbee from "@splitbee/web";
 
 export const Main: React.FC = () => {
   const toast = useToast();
+
+  splitbee.init();
+  splitbee.track("Click CTA");
 
   const [yourName, setYourName] = useState("");
   const [yourPartner, setyourPartner] = useState("");
@@ -145,6 +149,7 @@ export const Main: React.FC = () => {
                 variant="solid"
                 w="100%"
                 size="lg"
+                data-splitbee-event="Click CTA"
               >
                 <HStack>
                   <Box w="24px">

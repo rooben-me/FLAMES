@@ -44,8 +44,10 @@ export const Main: React.FC = () => {
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
+    var lowerCaseYourName = yourName.toLowerCase();
+    var lowerCaseYourPartner = yourPartner.toLowerCase();
 
-    var lengthInput = yourName.length + yourPartner.length;
+    var lengthInput = lowerCaseYourName.length + lowerCaseYourPartner.length;
     while (flames.length != 1) {
       flames = flames.splice(lengthInput % 6, 1);
     }
